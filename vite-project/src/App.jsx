@@ -28,8 +28,7 @@ function App() {
       <p className="read-the-docs">Prueba</p>
       <button>Esto es un botón</button>
       <p>Nuevo texto</p>
-      <p>Nuevo</p>
-      <p>Nuevo</p>
+      <p>texto cambiado</p>
       <p>Nuevo navegador</p>
     </>
   );
