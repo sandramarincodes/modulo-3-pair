@@ -1,10 +1,10 @@
 /* import PropTypes from "prop-types"; */
 
-function Link({ title, href }) {
+function Link({ titulo, href, openInNewTab }) {
   return (
     <li className="menu-item">
-      <a title={title} className="menu-link" href={href}>
-        {title}
+      <a title={titulo} className="menu-link" href={href} target={openInNewTab ? "_blank" : "_self"}>
+        {titulo}
       </a>
     </li>
   );

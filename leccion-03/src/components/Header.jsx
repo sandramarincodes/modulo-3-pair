@@ -9,9 +9,8 @@ function Header() {
 
         <nav>
           <ul>
-            <Link title="Hola" />
-            <Link title="Contacto" href="https://adalab.es/blog/" />
-            <Link title="Suscripción" />
+            <Link titulo="Contacto" href="https://adalab.es/contacto/" openInNewTab={false} />
+            <Link titulo="Blog" href="https://adalab.es/blog/" openInNewTab={true}/>
           </ul>
         </nav>
       </header>
