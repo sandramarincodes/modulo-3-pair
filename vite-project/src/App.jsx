@@ -1,35 +1,29 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Galeria from "./components/Galeria";
+import data from "./data/galeria.json";
+import { useState } from "react"; //Hooks
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [galeria, setGaleria] = useState(data);
+  const [valueSearch, setValueSearch] = useState("");
 
+  const handleChangeSearch = (ev) => {
+    setValueSearch(ev.target.value);
+  };
+
+  const filterFotos = galeria.filter((foto) =>
+    foto.title.toLowerCase().includes(valueSearch.toLowerCase())
+  );
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Prueba</p>
-      <button>Esto es un botón</button>
-      <p>Nuevo texto</p>
-      <p>texto cambiado</p>
-      <p>Nuevo navegador</p>
+      <h1>Galería</h1>
+      <input
+        type="text"
+        placeholder="buscar foto"
+        id="search"
+        value={valueSearch}
+        onChange={handleChangeSearch}
+      />
+      <Galeria fotos={filterFotos} />
     </>
   );
 }
